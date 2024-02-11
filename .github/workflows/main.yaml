@@ -1,11 +1,12 @@
 name: Upload Website
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'info'
 jobs:
   build:
     runs-on: ubuntu-latest
